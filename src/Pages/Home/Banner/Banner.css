@@ -1,0 +1,11 @@
+.banner h3 {
+    color: yellow;
+}
+
+.banner p {
+    color: white;
+}
+.cap{
+    background-color: rgb(116, 116, 116, .7);
+    border-radius: 50px;
+}
