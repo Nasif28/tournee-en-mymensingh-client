@@ -39,6 +39,8 @@ const Booking = (props) => {
         //         }
         //     })
 
+        data.status = "Panding";
+        data.booked = service;
         axios.post('http://localhost:5000/booking', data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -70,8 +72,8 @@ const Booking = (props) => {
                         <input placeholder="Address" defaultValue="" {...register("address")} />
                         <input placeholder="Number of Person" defaultValue="" {...register("person")} />
                         <input placeholder="Phone Number" defaultValue="" {...register("number")} />
-                        <input type="hidden" defaultValue="Panding" {...register("status")} />
-                        <input className="btn btn-success" type="submit" value="Book Now" />
+                        {/* <input type="hidden" defaultValue="Panding" {...register("status")} /> */}
+                        <input className="btn btn-success" type="submit" value="Confirm Book" />
 
                     </form>
                 </div>

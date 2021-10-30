@@ -23,7 +23,7 @@ const Service = (props) => {
                 </Card.Body>
                 <Card.Footer>
                     <Link to={`/booking/${_id}`}>
-                        <Button variant="success" className="w-100">Details & Book</Button>
+                        <Button variant="success" className="w-100">Details & Booking</Button>
                     </Link>
                 </Card.Footer>
             </Card>
