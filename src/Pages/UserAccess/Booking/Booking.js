@@ -24,21 +24,6 @@ const Booking = (props) => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        // fetch('https://fierce-basin-29909.herokuapp.com/booking', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         if (result.insertedId) {
-        //             alert('Order processed Successfully');
-        //             reset();
-        //         }
-        //     })
-
         data.status = "Panding";
         data.booked = service;
         axios.post('https://fierce-basin-29909.herokuapp.com/booking', data)
@@ -72,9 +57,7 @@ const Booking = (props) => {
                         <input placeholder="Address" defaultValue="" {...register("address")} />
                         <input placeholder="Number of Person" defaultValue="" {...register("person")} />
                         <input placeholder="Phone Number" defaultValue="" {...register("number")} />
-                        {/* <input type="hidden" defaultValue="Panding" {...register("status")} /> */}
                         <input className="btn btn-success" type="submit" value="Confirm Book" />
-
                     </form>
                 </div>
             </div>

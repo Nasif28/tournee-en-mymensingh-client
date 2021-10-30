@@ -15,18 +15,16 @@ const AddService = () => {
                 }
             })
     }
-    
+
     return (
         <div className="add-service">
             <h2 className="text-success fw-bolder mt-5">Please Add a Place fo Tourist</h2>
 
             <div className="row">
 
-                <div className="col-12 col-md-2 col-lg-3">
+                <div className="col-12 col-md-2 col-lg-3"></div>
 
-                </div>
                 <div className="col-12 col-md-8 col-lg-6">
-
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input {...register("title", { required: true, maxLength: 20 })} placeholder="Place Title" />
                         <input {...register("Place", { required: true, maxLength: 20 })} placeholder="Location" />
@@ -40,9 +38,7 @@ const AddService = () => {
                     </form>
                 </div>
 
-                <div className="col-12 col-md-2 col-lg-3">
-
-                </div>
+                <div className="col-12 col-md-2 col-lg-3"></div>
 
             </div>
         </div>

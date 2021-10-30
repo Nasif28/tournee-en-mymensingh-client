@@ -40,7 +40,6 @@ const Clients = () => {
                     </Card>
                 </div>
             </div>
-
             <div className="row mx-auto">
                 <div className="col-lg-3">
                     <Card className="text-start h-100">

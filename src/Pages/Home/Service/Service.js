@@ -1,10 +1,9 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
-import './Service.css'
 import { Link } from 'react-router-dom';
 
 const Service = (props) => {
-    const { _id, title, Place, guide, shortDescription, description, day, img } = props.service;
+    const { _id, title, Place, guide, shortDescription, day, img } = props.service;
 
     return (
         <Col>

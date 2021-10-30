@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
-import './Services.css'
 import { Container, Row } from 'react-bootstrap';
 
 const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/places')
+        fetch('https://fierce-basin-29909.herokuapp.com/places')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])

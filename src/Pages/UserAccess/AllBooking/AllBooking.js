@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Form, Spinner, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 const AllBooking = () => {
     const [booking, setBooking] = useState([]);
@@ -34,26 +34,9 @@ const AllBooking = () => {
         }
     };
 
-    // DELETE BOOKING
+    // HANDLE STATUS
     const handleStatus = (id) => {
-        // fetch(`https://fierce-basin-29909.herokuapp.com/updateStatus/${id}`, {
-        //     method: "PUT",
-        //     headers: { "content-type": "application/json" },
-        // })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         if (data.nModified) {
-        //             // setConrol(!control);
-        //             alert('Updated successfully');
-        //         }
-        //         // else {
-        //         //     setConrol(false);
-        //         // }
-        //     });
-
-        // axios.put(`http://localhost:5000/updateStatus`, {id} )
-        //     .then(res => console.log("Your order Approved"));
-        axios.put(`http://localhost:5000/updateStatus`, { id })
+        axios.put(`https://fierce-basin-29909.herokuapp.com/updateStatus`, { id })
             .then(res => console.log("Your order Approved"))
             .then((data) => setStatuss(true))
 

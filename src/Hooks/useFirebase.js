@@ -13,21 +13,16 @@ const useFirebase = () => {
     const signInUsingGoogle = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
-
-       return signInWithPopup(auth, googleProvider)
-            
+        return signInWithPopup(auth, googleProvider)
     }
 
     // observe user state change
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, user => {
             if (user) {
-                // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
                 setUser(user);
 
             } else {
-                // User is signed out
                 setUser({});
             }
             setIsLoading(false);
@@ -36,14 +31,12 @@ const useFirebase = () => {
         return unsubscribe;
     }, [])
 
-
     const logOut = () => {
         setIsLoading(true);
         signOut(auth)
             .then(() => { })
             .finally(() => setIsLoading(false));
     }
-
 
     return {
         user,

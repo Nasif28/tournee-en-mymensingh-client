@@ -27,9 +27,6 @@ const Header = () => {
 
                         {user?.email ?
                             (
-                                // <Nav.Link as={Link} to="/login">My Orders</Nav.Link>,
-                                // <Nav.Link as={Link} to="/login">All Orders</Nav.Link>,
-                                // <Nav.Link as={Link} to="/login">Add Place</Nav.Link>,
                                 <Navbar.Text className="">
                                     Signed in as: <a href="#login">{user?.displayName}</a>
                                     {user?.photoURL ?

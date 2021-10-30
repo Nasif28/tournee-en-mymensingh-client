@@ -33,10 +33,6 @@ function App() {
               <Home></Home>
             </Route>
 
-            {/* <Route path="/places">
-              <Place></Place>
-            </Route> */}
-
             <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
             </PrivateRoute>
