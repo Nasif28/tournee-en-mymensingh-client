@@ -37,7 +37,7 @@ const MyBooking = () => {
     return (
         <div className="container">
             <h1>My Bookings: {myBooking?.length}</h1>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <th>#</th>

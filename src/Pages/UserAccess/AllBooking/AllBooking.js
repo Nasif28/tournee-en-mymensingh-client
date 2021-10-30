@@ -45,7 +45,7 @@ const AllBooking = () => {
     return (
         <div className="container">
             <h1>Totall Bookings: {booking?.length}</h1>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <th>#</th>
