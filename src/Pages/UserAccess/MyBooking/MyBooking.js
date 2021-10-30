@@ -9,7 +9,7 @@ const MyBooking = () => {
     const [control, setConrol] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myBooking/${user?.email}`)
+        fetch(`https://fierce-basin-29909.herokuapp.com/myBooking/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setMyBooking(data));
     }, [user.email, control]);
@@ -18,7 +18,7 @@ const MyBooking = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to cancel?');
         if (proceed) {
-            fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
+            fetch(`https://fierce-basin-29909.herokuapp.com/deleteMyBooking/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

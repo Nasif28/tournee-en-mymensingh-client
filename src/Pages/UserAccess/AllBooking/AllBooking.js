@@ -1,22 +1,24 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Form, Spinner, Table } from "react-bootstrap";
 
 const AllBooking = () => {
     const [booking, setBooking] = useState([]);
     const [control, setConrol] = useState(false);
+    const [statuss, setStatuss] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allBooking")
+        fetch("https://fierce-basin-29909.herokuapp.com/allBooking")
             .then((res) => res.json())
             .then((data) => setBooking(data));
-    }, [control]);
+    }, [control, statuss]);
 
 
     // DELETE BOOKING
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/deleteBooking/${id}`, {
+            fetch(`https://fierce-basin-29909.herokuapp.com/deleteBooking/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
@@ -34,20 +36,27 @@ const AllBooking = () => {
 
     // DELETE BOOKING
     const handleStatus = (id) => {
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
-            method: "PUT",
-            headers: { "content-type": "application/json" },
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.nModified) {
-                    // setConrol(!control);
-                    alert('Updated successfully');
-                }
-                // else {
-                //     setConrol(false);
-                // }
-            });
+        // fetch(`https://fierce-basin-29909.herokuapp.com/updateStatus/${id}`, {
+        //     method: "PUT",
+        //     headers: { "content-type": "application/json" },
+        // })
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         if (data.nModified) {
+        //             // setConrol(!control);
+        //             alert('Updated successfully');
+        //         }
+        //         // else {
+        //         //     setConrol(false);
+        //         // }
+        //     });
+
+        // axios.put(`http://localhost:5000/updateStatus`, {id} )
+        //     .then(res => console.log("Your order Approved"));
+        axios.put(`http://localhost:5000/updateStatus`, { id })
+            .then(res => console.log("Your order Approved"))
+            .then((data) => setStatuss(true))
+
     };
 
     return (
@@ -75,7 +84,13 @@ const AllBooking = () => {
                                 <option>Panding</option>
                                 <option>Confirm</option>
                             </Form.Select> */}
-                            <button onClick={() => handleStatus(pd.status)} className="btn bg-primary mx-2 text-white"><td>{pd?.status}</td></button>
+                            <p>
+                                {(pd.status === 'Approved') ? <button className="btn bg-warning mx-2 text-white">{pd?.status}</button> :
+                                    <button onClick={() => handleStatus(pd._id)} className="btn bg-primary mx-2 text-white">{pd?.status}</button>
+                                }
+                            </p>
+
+                            {/* <button onClick={() => handleStatus(pd._id)} className="btn bg-primary mx-2 text-white"><td></td></button> */}
                             <button onClick={() => handleDelete(pd._id)} className="btn bg-danger p-2 text-white">Delete</button>
                         </tr>
                     </tbody>

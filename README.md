@@ -5,7 +5,7 @@ The Client Site Github link: https://github.com/programming-hero-web-course1/tou
 The Server Site Github link: https://github.com/programming-hero-web-course1/tourism-or-delivery-website-server-side-Nasif28
 <br><br>
 The Project Live Site Link (Firebase): https://tournee-en-mymensingh.web.app/
-The Server Live Site Link (Heroku): https://tournee-en-mymensingh.web.app/
+The Server Live Site Link (Heroku): https://fierce-basin-29909.herokuapp.com/
 <br><br>
 About Site:
 Tournee en Mymensingh is the largest directory of Mymensingh tour and travel. We have tried to list out all tourist spots of Mymensingh. It's will help our clients to make trip plane based on spots description, rating, photos as well videos.

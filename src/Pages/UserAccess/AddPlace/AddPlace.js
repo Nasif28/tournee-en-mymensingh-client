@@ -7,7 +7,7 @@ const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        axios.post('http://localhost:5000/places', data)
+        axios.post('https://fierce-basin-29909.herokuapp.com/places', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
@@ -15,6 +15,7 @@ const AddService = () => {
                 }
             })
     }
+    
     return (
         <div className="add-service">
             <h2 className="text-success fw-bolder mt-5">Please Add a Place fo Tourist</h2>

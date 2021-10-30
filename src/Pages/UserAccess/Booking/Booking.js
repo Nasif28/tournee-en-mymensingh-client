@@ -13,7 +13,7 @@ const Booking = (props) => {
     const [service, setService] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/places/${serviceId}`)
+        fetch(`https://fierce-basin-29909.herokuapp.com/places/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data));
     }, [])
@@ -24,7 +24,7 @@ const Booking = (props) => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        // fetch('http://localhost:5000/booking', {
+        // fetch('https://fierce-basin-29909.herokuapp.com/booking', {
         //     method: 'POST',
         //     headers: {
         //         'content-type': 'application/json'
@@ -41,7 +41,7 @@ const Booking = (props) => {
 
         data.status = "Panding";
         data.booked = service;
-        axios.post('http://localhost:5000/booking', data)
+        axios.post('https://fierce-basin-29909.herokuapp.com/booking', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
