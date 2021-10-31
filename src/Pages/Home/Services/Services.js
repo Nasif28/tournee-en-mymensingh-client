@@ -5,15 +5,14 @@ import useAuth from './../../../Hooks/useAuth';
 
 const Services = () => {
     const [services, setServices] = useState([]);
-    // const { user, isLoading } = useAuth();
-    const { loading, setLoading } = useState(null);
+    const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
         fetch('https://fierce-basin-29909.herokuapp.com/places')
             .then(res => res.json())
             .then(data => {
                 setServices(data)
-                // setLoading(true)
+                setLoading(true)
             });
 
 
@@ -22,7 +21,7 @@ const Services = () => {
     return (
         <div>
             {
-                !loading ? (
+                loading ? (
                     <Container id="services" fluid="lg" className="mt-5" >
                         <h2 className="fw-bold text-success m-3">Our Services</h2>
                         <Row xs={1} md={2} lg={2} className="g-4">

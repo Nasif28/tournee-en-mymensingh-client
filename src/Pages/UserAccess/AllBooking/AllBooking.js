@@ -39,7 +39,6 @@ const AllBooking = () => {
         axios.put(`https://fierce-basin-29909.herokuapp.com/updateStatus`, { id })
             .then(res => console.log("Your order Approved"))
             .then((data) => setStatuss(true))
-
     };
 
     return (
