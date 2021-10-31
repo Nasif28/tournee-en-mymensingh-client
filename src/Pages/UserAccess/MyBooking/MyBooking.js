@@ -55,6 +55,7 @@ const MyBooking = () => {
                             <td>{pd?.email}</td>
                             <td>{pd?.number}</td>
                             <td>{pd?.booked.title}</td>
+                            <button className="btn bg-warning mx-2 text-white">{pd?.status}</button>
                             <button onClick={() => handleDelete(pd._id)} className="btn bg-danger p-2 text-white">Cancel</button>
                         </tr>
                     </tbody>
