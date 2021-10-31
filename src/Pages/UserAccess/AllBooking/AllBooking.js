@@ -62,17 +62,11 @@ const AllBooking = () => {
                             <td>{pd?.email}</td>
                             <td>{pd?.number}</td>
                             <td>{pd?.booked.title}</td>
-                            {/* <Form.Select>
-                                <option>Panding</option>
-                                <option>Confirm</option>
-                            </Form.Select> */}
                             <p>
                                 {(pd.status === 'Approved') ? <button className="btn bg-warning mx-2 text-white">{pd?.status}</button> :
                                     <button onClick={() => handleStatus(pd._id)} className="btn bg-primary mx-2 text-white">{pd?.status}</button>
                                 }
                             </p>
-
-                            {/* <button onClick={() => handleStatus(pd._id)} className="btn bg-primary mx-2 text-white"><td></td></button> */}
                             <button onClick={() => handleDelete(pd._id)} className="btn bg-danger p-2 text-white">Delete</button>
                         </tr>
                     </tbody>
