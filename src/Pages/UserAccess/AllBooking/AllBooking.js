@@ -8,7 +8,7 @@ const AllBooking = () => {
     const [statuss, setStatuss] = useState(false);
 
     useEffect(() => {
-        fetch("https://fierce-basin-29909.herokuapp.com/allBooking")
+        fetch("https://tournee-en-mymensingh.onrender.com/allBooking")
             .then((res) => res.json())
             .then((data) => setBooking(data));
     }, [control, statuss]);
@@ -18,7 +18,7 @@ const AllBooking = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            fetch(`https://fierce-basin-29909.herokuapp.com/deleteBooking/${id}`, {
+            fetch(`https://tournee-en-mymensingh.onrender.com/deleteBooking/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
@@ -36,7 +36,7 @@ const AllBooking = () => {
 
     // HANDLE STATUS
     const handleStatus = (id) => {
-        axios.put(`https://fierce-basin-29909.herokuapp.com/updateStatus`, { id })
+        axios.put(`https://tournee-en-mymensingh.onrender.com/updateStatus`, { id })
             .then(res => console.log("Your order Approved"))
             .then((data) => setStatuss(true))
     };

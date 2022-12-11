@@ -1,3 +1,6 @@
+.banner img{
+    height: 90vh;
+}
 .banner h3 {
     color: yellow;
 }
@@ -6,6 +9,6 @@
     color: white;
 }
 .cap{
-    background-color: rgb(116, 116, 116, .7);
+    background-color: rgba(56, 56, 56, 0.8);
     border-radius: 50px;
 }

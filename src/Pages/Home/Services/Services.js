@@ -8,7 +8,7 @@ const Services = () => {
     const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
-        fetch('https://fierce-basin-29909.herokuapp.com/places')
+        fetch('https://tournee-en-mymensingh.onrender.com/places')
             .then(res => res.json())
             .then(data => {
                 setServices(data)

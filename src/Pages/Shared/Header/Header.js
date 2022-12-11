@@ -12,28 +12,28 @@ const Header = () => {
                 <Container>
                     <Navbar.Brand Link as={Link} to="/home" className="fw-bolder text-success">Tournee en Mymensingh</Navbar.Brand>
                     <Navbar.Toggle />
-                    <Navbar.Collapse className="justify-content-center">
-                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#services">Places</Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#guides">Guides</Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#welcome">Welcome</Nav.Link>
+                    <Navbar.Collapse className="justify-content-end">
+                        <Nav.Link as={Link} to="/home" className="me-3">Home</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#services" className="me-3">Places</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#guides" className="me-3">Guides</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#welcome" className="me-3">Welcome</Nav.Link>
 
                         {user?.email ?
-                            <Nav.Link as={Link} to="/myBooking">My_Booking</Nav.Link> : ''}
+                            <Nav.Link as={Link} to="/myBooking" className="me-3">My_Booking</Nav.Link> : ''}
                         {user?.email ?
-                            <Nav.Link as={Link} to="/allBooking">All_Booking</Nav.Link> : ''}
+                            <Nav.Link as={Link} to="/allBooking" className="me-3">All_Booking</Nav.Link> : ''}
                         {user?.email ?
-                            <Nav.Link as={Link} to="/addPlace">Add_Place</Nav.Link> : ''}
+                            <Nav.Link as={Link} to="/addPlace" className="me-3">Add_Place</Nav.Link> : ''}
 
                         {user?.email ?
                             (
                                 <Navbar.Text className="">
-                                    Signed in as: <a href="#login">{user?.displayName}</a>
+                                    Signed: <a href="#login">{user?.displayName}</a>
                                     {user?.photoURL ?
-                                        <img className="mx-3 border border-success border-2 rounded-circle" src={user?.photoURL} width="40" height="40" alt="" /> :
-                                        <img className="mx-3 border border-success border-2 rounded-circle" src={'https://dm0qx8t0i9gc9.cloudfront.net/watermarks/image/rDtN98Qoishumwih/scared-cartoon-face-expression_XkDKCZ_SB_PM.jpg'} width="40" height="40" alt="" />
+                                        <img className="mx-1 border border-success border-2 rounded-circle" src={user?.photoURL} width="30" height="30" alt="" /> :
+                                        <img className="mx-1 border border-success border-2 rounded-circle" src={'https://dm0qx8t0i9gc9.cloudfront.net/watermarks/image/rDtN98Qoishumwih/scared-cartoon-face-expression_XkDKCZ_SB_PM.jpg'} width="40" height="40" alt="" />
                                     }
-                                    <Button onClick={logOut} className="btn fw-bolder btn-success me-2">Logout</Button>
+                                    <Button onClick={logOut} className="btn fw-bolder btn-success px-2 py-1">Logout</Button>
                                 </Navbar.Text>
                             )
                             :

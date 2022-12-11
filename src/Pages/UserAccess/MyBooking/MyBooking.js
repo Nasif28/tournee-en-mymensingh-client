@@ -9,7 +9,7 @@ const MyBooking = () => {
     const [control, setConrol] = useState(false);
 
     useEffect(() => {
-        fetch(`https://fierce-basin-29909.herokuapp.com/myBooking/${user?.email}`)
+        fetch(`https://tournee-en-mymensingh.onrender.com/myBooking/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setMyBooking(data));
     }, [control, user?.email]);
@@ -19,7 +19,7 @@ const MyBooking = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to cancel?');
         if (proceed) {
-            fetch(`https://fierce-basin-29909.herokuapp.com/deleteMyBooking/${id}`, {
+            fetch(`https://tournee-en-mymensingh.onrender.com/deleteMyBooking/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

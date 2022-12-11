@@ -13,7 +13,7 @@ const Booking = (props) => {
     const [service, setService] = useState({});
 
     useEffect(() => {
-        fetch(`https://fierce-basin-29909.herokuapp.com/places/${serviceId}`)
+        fetch(`https://tournee-en-mymensingh.onrender.com/places/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data));
     }, [])
@@ -26,7 +26,7 @@ const Booking = (props) => {
     const onSubmit = data => {
         data.status = "Panding";
         data.booked = service;
-        axios.post('https://fierce-basin-29909.herokuapp.com/booking', data)
+        axios.post('https://tournee-en-mymensingh.onrender.com/booking', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');

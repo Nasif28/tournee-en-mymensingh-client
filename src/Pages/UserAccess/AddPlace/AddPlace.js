@@ -7,7 +7,7 @@ const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        axios.post('https://fierce-basin-29909.herokuapp.com/places', data)
+        axios.post('https://tournee-en-mymensingh.onrender.com/places', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
