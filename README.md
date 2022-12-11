@@ -1,13 +1,13 @@
 #Tournee en Mymensingh<br><br
 Welcome<br>
 <br>
-The Client Site Github link: https://github.com/programming-hero-web-course1/tourism-or-delivery-website-client-side-Nasif28 
+The Client Site Github link: https://github.com/Nasif28/tournee-en-mymensingh-client
 <br>
-The Server Site Github link: https://github.com/programming-hero-web-course1/tourism-or-delivery-website-server-side-Nasif28
+The Server Site Github link: https://github.com/Nasif28/tournee-en-mymensingh-server
 <br><br>
 The Project Live Site Link (Firebase): https://tournee-en-mymensingh.web.app/
 <br>
-The Server Live Site Link (Heroku): https://fierce-basin-29909.herokuapp.com/
+The Server Live Site Link (Heroku): https://tournee-en-mymensingh.onrender.com/
 <br><br>
 About Site:<br>
 Tournee en Mymensingh is the largest directory of Mymensingh tour and travel. We have tried to list out all tourist spots of Mymensingh. It's will help our clients to make trip plane based on spots description, rating, photos as well videos.<br>
