@@ -1,14 +1,22 @@
-.banner img{
-    height: 90vh;
+.banner {
+    width: 80%;
+    margin: 2px auto;
+    text-align: center;
+    align-items: center;
+}
+.banner img {
+  max-height: 70vh;
+  /* width: 80vh; */
 }
 .banner h3 {
-    color: yellow;
+  color: greenyellow;
 }
 
 .banner p {
-    color: white;
+  color: white;
+  padding: 0px 5px;
 }
-.cap{
-    background-color: rgba(56, 56, 56, 0.8);
-    border-radius: 50px;
+.cap {
+  background-color: rgba(56, 56, 56, 0.5);
+  border-radius: 10px 30px;
 }

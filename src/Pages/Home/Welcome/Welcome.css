@@ -1,3 +1,31 @@
 .welcome {
-    background-image: url("https://amplifythemes.com/petenica/wp-content/uploads/2018/03/pattern-1.png"), linear-gradient(rgba(255, 0, 0, 0.767), rgba(0, 255, 0, 0.281));
+  background-image: url("https://amplifythemes.com/petenica/wp-content/uploads/2018/03/pattern-1.png"),
+    linear-gradient(rgba(255, 0, 0, 0.767), rgba(0, 255, 0, 0.281));
+  padding: 0% 10%;
+  color: white;
+}
+
+.welcome img {
+  border-radius: 5px;
+}
+
+@media (max-width: 1280px) {
+  .welcome {
+    padding: 2rem 1rem;
+  }
+  .welcome .ps-lg-5 {
+    padding-left: 1rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .welcome {
+    text-align: center;
+  }
+  .welcome .ps-lg-5 {
+    padding-left: 0 !important;
+  }
+  .welcome p {
+    padding: 0 1rem;
+  }
 }

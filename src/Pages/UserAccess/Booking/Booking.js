@@ -1,13 +1,12 @@
-import React from 'react';
-import './Booking.css'
+import React, { useEffect, useState } from 'react';
+import './Booking.css';
 import { useParams } from 'react-router';
-import { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container, Row, Col, Card, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Hooks/useAuth';
 import axios from 'axios';
 
-const Booking = (props) => {
+const Booking = () => {
     // Show Single Service by ID
     const { serviceId } = useParams();
     const [service, setService] = useState({});
@@ -16,57 +15,77 @@ const Booking = (props) => {
         fetch(`https://tournee-en-mymensingh.onrender.com/places/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data));
-    }, [])
+    }, [serviceId]);
 
-
-    // Click and Book Survice
+    // Click and Book Service
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { user } = useAuth();
 
     const onSubmit = data => {
-        data.status = "Panding";
+        data.status = "Pending";
         data.booked = service;
         axios.post('https://tournee-en-mymensingh.onrender.com/booking', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    alert('Added successfully');
                     reset();
                 }
             });
     };
 
     return (
-        <div id="details" className="container">
-            <h1 className="fw-bold text-success my-5">Details of {service?.title}</h1>
-            <div className="row">
-                <div className="col-12 col-md-12 col-lg-8">
-                    <img className="img-fluid" src={service?.img} alt="" />
-                    <h2 className="fw-bold text-success">{service?.title}</h2>
-                    <small>{service?.Place}</small>
-                    <p></p>
-                    <h6 className="text-start mt-5">Guide: {service?.guide}</h6>
-                    <h6 className="text-start">Duration: {service?.day}</h6>
-                    <h6 className="text-start">Total Cost: ${service?.cost}</h6>
-                </div>
+        <Container id="details" className="my-5">
+            <h1 className="text-center fw-bold text-success mb-5">Details of {service?.title}</h1>
+            <Row>
+                <Col lg={8} className="mb-4">
+                    <Card>
+                        <Card.Img variant="top" src={service?.img} alt={service?.title} />
+                        <Card.Body>
+                            <Card.Title className="fw-bold text-success">{service?.title}</Card.Title>
+                            <Card.Text>{service?.place}</Card.Text>
+                            <Card.Text className="mt-4">
+                                <strong>Guide:</strong> {service?.guide}<br />
+                                <strong>Duration:</strong> {service?.day}<br />
+                                <strong>Total Cost:</strong> ${service?.cost}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
 
-                <div className="col-12 col-md-12 col-lg-4">
-                    <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
-                        <input defaultValue={user.displayName} {...register("name")} />
-                        <input defaultValue={user.email} {...register("email", { required: true })} />
-                        {errors.email && <span className="error">This field is required</span>}
-                        <input placeholder="Address" defaultValue="" {...register("address")} />
-                        <input placeholder="Number of Person" defaultValue="" {...register("person")} />
-                        <input placeholder="Phone Number" defaultValue="" {...register("number")} />
-                        <input className="btn btn-success" type="submit" value="Confirm Book" />
-                    </form>
-                </div>
-            </div>
+                <Col lg={4}>
+                    <Card className="p-3">
+                        <Form onSubmit={handleSubmit(onSubmit)}>
+                            <Form.Group controlId="formName">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control defaultValue={user.displayName} {...register("name")} />
+                            </Form.Group>
+                            <Form.Group controlId="formEmail" className="mt-3">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control defaultValue={user.email} {...register("email", { required: true })} />
+                                {errors.email && <Form.Text className="text-danger">This field is required</Form.Text>}
+                            </Form.Group>
+                            <Form.Group controlId="formAddress" className="mt-3">
+                                <Form.Label>Address</Form.Label>
+                                <Form.Control placeholder="Address" {...register("address")} />
+                            </Form.Group>
+                            <Form.Group controlId="formPerson" className="mt-3">
+                                <Form.Label>Number of Person</Form.Label>
+                                <Form.Control placeholder="Number of Person" {...register("person")} />
+                            </Form.Group>
+                            <Form.Group controlId="formPhoneNumber" className="mt-3">
+                                <Form.Label>Phone Number</Form.Label>
+                                <Form.Control placeholder="Phone Number" {...register("number")} />
+                            </Form.Group>
+                            <Button type="submit" className="btn-success w-100 mt-4">Confirm Booking</Button>
+                        </Form>
+                    </Card>
+                </Col>
+            </Row>
 
-            <h2 className="mt-5 fw-bold text-success">Description of {service?.title} </h2>
+            <h2 className="mt-5 fw-bold text-success">Description of {service?.title}</h2>
             <p>{service?.description}</p>
-            <Button href="/home#services" className="btn fw-bolder btn-success px-5 mt-3">Back</Button>
-
-        </div>
+            <Button href="/home#services" className="btn-success mt-3">Back</Button>
+        </Container>
     );
 };
 

@@ -1,0 +1,58 @@
+/* MyBooking.css */
+
+.my-bookings-container {
+    padding: 2rem 1rem;
+}
+
+.booking-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.booking-card .status-button:hover {
+    transform: scale(1.02);
+}
+.booking-card .cancel-button:hover {
+    transform: scale(1.02);
+}
+
+.booking-card .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.booking-card .card-text {
+    font-size: 1rem;
+}
+
+.booking-card .status-button {
+    min-width: 80px;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.booking-card .cancel-button {
+    min-width: 80px;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+@media (max-width: 767px) {
+    .my-bookings-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .booking-card .card-title {
+        font-size: 1rem;
+    }
+
+    .booking-card .card-text {
+        font-size: 0.9rem;
+    }
+
+    .booking-card .status-button, .booking-card .cancel-button {
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+}
