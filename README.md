@@ -5,7 +5,7 @@ The Client Site Github link: https://github.com/Nasif28/tournee-en-mymensingh-cl
 <br>
 The Server Site Github link: https://github.com/Nasif28/tournee-en-mymensingh-server
 <br><br>
-The Project Live Site Link (Firebase): https://tournee-en-mymensingh.web.app/
+The Project Live Site Link (Render): https://tournee-en-mymensingh-mlyg.onrender.com/
 <br>
 The Server Live Site Link (Heroku): https://tournee-en-mymensingh.onrender.com/
 <br><br>
